@@ -87,6 +87,11 @@
               thead {
               }
               tbody {
+                tr:not(:first-child) {
+                  td {
+                    color: #777;
+                  }
+                }
                 tr:first-child {
                   td {
                     color: var(--first-font-color);
@@ -129,21 +134,60 @@
                   padding-bottom: 20px;
                   border-bottom: 2px solid #ccc;
                   color: var(--first-font-color);
+                  font-size: 18px;
                   i {
                     margin-left: 10px;
                   }
                 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
                 td {
-                  padding: ;
+                  padding: 15px 0;
+                  font-size: 18px;
                   input {
                   }
                   img {
+                    width: 80px;
                   }
                   span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 45px;
+                    height: 35px;
+                    border: 1px solid #acacac;
+                    border-radius: 5px;
                   }
                   button {
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    color: white;
+                    &.conf {
+                      background-color: var(--light-blue-color);
+                    }
+                    &.pend {
+                      background-color: var(--yallu-color);
+                    }
                   }
                   i {
+                    font-size: 20px;
                   }
                 }
                 &:not(:last-child) {
@@ -219,7 +263,7 @@
           <tbody>
             <tr>
               <td>
-                <input type="checkbox" />
+                <input type="checkbox" checked />
               </td>
               <td>#1150</td>
               <td><img src="images/1.png" alt="" /></td>
@@ -227,7 +271,7 @@
               <td>Mark Willy</td>
               <td><span>05</span></td>
               <td>$2,590</td>
-              <td><button>Confirmed</button></td>
+              <td><button class="conf">Confirmed</button></td>
               <td>+123 9856047</td>
               <td>
                 <i class="fa-solid fa-ellipsis"></i>
@@ -243,7 +287,7 @@
               <td>Mithila Zaman</td>
               <td><span>03</span></td>
               <td>$1,590</td>
-              <td><button>Pending</button></td>
+              <td><button class="pend">Pending</button></td>
               <td>+123 9856047</td>
               <td>
                 <i class="fa-solid fa-ellipsis"></i>
@@ -259,7 +303,7 @@
               <td>Siddikur Rahman</td>
               <td><span>05</span></td>
               <td>$2,590</td>
-              <td><button>Confirmed</button></td>
+              <td><button class="conf">Confirmed</button></td>
               <td>+123 9856047</td>
               <td>
                 <i class="fa-solid fa-ellipsis"></i>
@@ -275,7 +319,7 @@
               <td>Siddikur Rahman</td>
               <td><span>05</span></td>
               <td>$2,590</td>
-              <td><button>Confirmed</button></td>
+              <td><button class="conf">Confirmed</button></td>
               <td>+123 9856047</td>
               <td>
                 <i class="fa-solid fa-ellipsis"></i>
@@ -291,7 +335,7 @@
               <td>Mithila Zaman</td>
               <td><span>03</span></td>
               <td>$1,590</td>
-              <td><button>Pending</button></td>
+              <td><button class="pend">Pending</button></td>
               <td>+123 9856047</td>
               <td>
                 <i class="fa-solid fa-ellipsis"></i>
@@ -307,7 +351,7 @@
               <td>Siddikur Rahman</td>
               <td><span>05</span></td>
               <td>$2,590</td>
-              <td><button>Confirmed</button></td>
+              <td><button class="conf">Confirmed</button></td>
               <td>+123 9856047</td>
               <td>
                 <i class="fa-solid fa-ellipsis"></i>
