@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Orders List</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <style>
+      :root {
+        --light-blue-color: #2ce5c0;
+        --yallu-color: #ffb74d;
+        --first-font-color: #333;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .container {
+        border: 20px solid #eee;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 40px 50px;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        .container {
+          header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            h1 {
+              margin: 0;
+              font-size: 23px;
+              color: var(--first-font-color);
+            }
+            i {
+              color: #ccc;
+              font-size: 30px;
+              cursor: pointer;
+            }
+          }
+          main {
+            .control-panel {
+              display: flex;
+              gap: 20px;
+              margin-bottom: 30px;
+              input {
+                border: none;
+                outline: none;
+                padding: 15px;
+                background-color: #eee;
+                font-size: 15px;
+                border-radius: 1px;
+                &.invoic-search {
+                  width: 15%;
+                }
+                &.title-search,
+                &.phone-search {
+                  width: calc((75% - 60px) / 2);
+                }
+                &::placeholder {
+                  font-style: italic;
+                }
+              }
+              button {
+                border-radius: 1px;
+                border: none;
+                outline: none;
+                width: 10%;
+                padding: 10px;
+                color: white;
+                font-size: 15px;
+                font-weight: bold;
+                background: linear-gradient(to right, #41389e, #7623a0);
+                cursor: pointer;
+              }
+            }
+            table {
+              width: 100%;
+              text-align: left;
+              border-collapse: collapse;
+              thead {
+              }
+              tbody {
+                tr:first-child {
+                  td {
+                    color: var(--first-font-color);
+                  }
+                }
+              }
+              tr {
+                input[type="checkbox"] {
+                  position: relative;
+                  cursor: pointer;
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 20px;
+                    height: 20px;
+                    background-color: white;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                  }
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 5px;
+                  }
+                  &:checked:after {
+                    background: linear-gradient(to right, #41389e, #7623a0);
+                    box-shadow: 0px 5px 30px -2px black;
+                  }
+                }
+                th {
+                  font-weight: normal;
+                  padding-bottom: 20px;
+                  border-bottom: 2px solid #ccc;
+                  color: var(--first-font-color);
+                  i {
+                    margin-left: 10px;
+                  }
+                }
+                td {
+                  padding: ;
+                  input {
+                  }
+                  img {
+                  }
+                  span {
+                  }
+                  button {
+                  }
+                  i {
+                  }
+                }
+                &:not(:last-child) {
+                  td {
+                    border-bottom: 1px solid #ccc;
+                  }
+                }
+              }
+            }
+            .control-footer {
+              .page-info {
+              }
+              .pages-control {
+                .buttons {
+                  button {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Start Header -->
+      <header>
+        <h1>Order List</h1>
+        <i class="fa-solid fa-ellipsis"></i>
+      </header>
+      <!-- End Header -->
+      <!-- Start Main -->
+      <main>
+        <!-- Start Control Panel -->
+        <div class="control-panel">
+          <input
+            type="text"
+            class="invoic-search"
+            placeholder="Invoice Search"
+          />
+          <input
+            type="text"
+            class="title-search"
+            placeholder="Search By Title"
+          />
+          <input
+            type="text"
+            class="phone-search"
+            placeholder="Search By Phone"
+          />
+          <button>SEARCH</button>
+        </div>
+        <!-- End Control Panel -->
+        <!-- Start Table -->
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <input type="checkbox" />
+              </th>
+              <th>Invoice</th>
+              <th>Image</th>
+              <th>Menu <i class="fa-solid fa-caret-down"></i></th>
+              <th>Customer Name <i class="fa-solid fa-caret-down"></i></th>
+              <th>Quantity</th>
+              <th>Amount <i class="fa-solid fa-caret-down"></i></th>
+              <th>Order Status <i class="fa-solid fa-caret-down"></i></th>
+              <th>Phone <i class="fa-solid fa-caret-down"></i></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox" />
+              </td>
+              <td>#1150</td>
+              <td><img src="images/1.png" alt="" /></td>
+              <td>Cheese Pizza</td>
+              <td>Mark Willy</td>
+              <td><span>05</span></td>
+              <td>$2,590</td>
+              <td><button>Confirmed</button></td>
+              <td>+123 9856047</td>
+              <td>
+                <i class="fa-solid fa-ellipsis"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" />
+              </td>
+              <td>#1151</td>
+              <td><img src="images/2.png" alt="" /></td>
+              <td>Big Burger</td>
+              <td>Mithila Zaman</td>
+              <td><span>03</span></td>
+              <td>$1,590</td>
+              <td><button>Pending</button></td>
+              <td>+123 9856047</td>
+              <td>
+                <i class="fa-solid fa-ellipsis"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" />
+              </td>
+              <td>#1152</td>
+              <td><img src="images/3.png" alt="" /></td>
+              <td>Chicked Pasta</td>
+              <td>Siddikur Rahman</td>
+              <td><span>05</span></td>
+              <td>$2,590</td>
+              <td><button>Confirmed</button></td>
+              <td>+123 9856047</td>
+              <td>
+                <i class="fa-solid fa-ellipsis"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" />
+              </td>
+              <td>#1153</td>
+              <td><img src="images/4.png" alt="" /></td>
+              <td>Chicken Pasta</td>
+              <td>Siddikur Rahman</td>
+              <td><span>05</span></td>
+              <td>$2,590</td>
+              <td><button>Confirmed</button></td>
+              <td>+123 9856047</td>
+              <td>
+                <i class="fa-solid fa-ellipsis"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" />
+              </td>
+              <td>#1154</td>
+              <td><img src="images/5.png" alt="" /></td>
+              <td>Big Burger</td>
+              <td>Mithila Zaman</td>
+              <td><span>03</span></td>
+              <td>$1,590</td>
+              <td><button>Pending</button></td>
+              <td>+123 9856047</td>
+              <td>
+                <i class="fa-solid fa-ellipsis"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" />
+              </td>
+              <td>#1155</td>
+              <td><img src="images/6.png" alt="" /></td>
+              <td>Chicken Pasta</td>
+              <td>Siddikur Rahman</td>
+              <td><span>05</span></td>
+              <td>$2,590</td>
+              <td><button>Confirmed</button></td>
+              <td>+123 9856047</td>
+              <td>
+                <i class="fa-solid fa-ellipsis"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- End Table -->
+        <!-- Start control Footer -->
+        <div class="control-footer">
+          <div class="page-info">Showing 1-30 / 150 Results</div>
+          <div class="pages-control">
+            Previous
+            <div class="buttons">
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>4</button>
+            </div>
+            Next
+          </div>
+        </div>
+        <!-- End control Footer -->
+      </main>
+      <!-- End Main -->
+    </div>
+  </body>
+</html>
